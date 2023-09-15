@@ -8,8 +8,8 @@ from django.core import serializers
 def show_main(request):
     products = Product.objects.all()
     context = {
-        'name': "Pak Bepe",
-        "class": "PBP A",
+        'name': "Muhammad Nabil Mu'afa",
+        "class": "PBP C",
         "products": products
     }
 

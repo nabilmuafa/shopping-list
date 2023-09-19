@@ -22,9 +22,9 @@
             <!-- {% endfor %}
         </ul> -->
 
-        <div class="flex flex-wrap items-start gap-4 my-8">
+        <div class="grid-cols-3 grid gap-4 my-8">
             {% for product in products %}
-            <div class="w-1/4 h-72 border-2 border-gray-200 rounded-lg p-6">
+            <div class="h-96 border-2 border-gray-200 rounded-lg p-6">
                 <p class="flex justify-between font-bold">{{product.name}}<span>Rp{{product.price}}</span></p>
                 <p class="pt-2">{{product.description}}</p>
             </div>

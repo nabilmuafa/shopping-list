@@ -1,40 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Shopping List Page</h1>
+    <div class="container mx-auto">
+        <div class="header mb-8">
+            <div class="flex justify-between items-center px-32">
+                <p class="text-3xl text-green-500 font-montserrat font-bold py-8">SHOPPING LIST PAGE</p>
+                <a href="{% url 'main:create_product' %}">
+                    <button class="font-montserrat bg-green-500 hover:bg-green-700 font-medium text-white rounded-full px-4 py-2">Add New Product</button>
+                </a>
+            </div>
+        </div>
+        
+        <h5>{{name}} - {{class}}</h5>
+        
+        <!-- <ul>
+            {% for product in products %}
+            <li class="flex justify-between items-center shadow-lg rounded-lg p-6">
+                <p>{{product.name}}<span>{{product.price}}</span></p>
+                <p>{{product.description}}<span>{{product.date_added}}</span></p>
+            </li> -->
+            <!-- {% endfor %}
+        </ul> -->
 
-    <h5>Name:</h5>
-    <p>{{name}}</p>
-
-    <h5>Class:</h5>
-    <p>{{class}}</p>
-
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Description</th>
-            <th>Date Added</th>
-        </tr>
-    
-        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-    
-        {% for product in products %}
-            <tr>
+        <div class="flex flex-wrap items-start gap-4 my-8">
+            {% for product in products %}
+            <div class="w-1/4 h-72 border-2 border-gray-200 rounded-lg p-6">
+                <p class="flex justify-between font-bold">{{product.name}}<span>Rp{{product.price}}</span></p>
+                <p class="pt-2">{{product.description}}</p>
+            </div>
+            <!-- <tr>
                 <td>{{product.name}}</td>
                 <td>{{product.price}}</td>
                 <td>{{product.description}}</td>
                 <td>{{product.date_added}}</td>
-            </tr>
-        {% endfor %}
-    </table>
+            </tr> -->
+            {% endfor %}
+        </ul>
     
     <br />
+    </div>
     
-    <a href="{% url 'main:create_product' %}">
-        <button>
-            Add New Product
-        </button>
-    </a>
-
-{% endblock content %}
+    {% endblock content %}

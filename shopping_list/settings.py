@@ -139,6 +139,10 @@ COMPRESS_ROOT = BASE_DIR / 'static'
 
 COMPRESS_ENABLED = True
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, '/static')
+]
+
 STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
 
 # Default primary key field type

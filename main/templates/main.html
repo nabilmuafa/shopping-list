@@ -11,17 +11,17 @@
             </div>
         </div>
         
-        <h5>{{name}} - {{class}}</h5>
-        
-        <!-- <ul>
-            {% for product in products %}
-            <li class="flex justify-between items-center shadow-lg rounded-lg p-6">
-                <p>{{product.name}}<span>{{product.price}}</span></p>
-                <p>{{product.description}}<span>{{product.date_added}}</span></p>
-            </li> -->
-            <!-- {% endfor %}
-        </ul> -->
-
+        <h5>
+            {{name}} - {{class}}
+            <span class="mx-4">
+                <a href="{% url 'main:logout' %}">
+                    <button class="font-montserrat bg-green-500 hover:bg-green-700 font-medium text-white rounded-full px-4 py-1">
+                        Logout
+                    </button>
+                </a>
+            </span>
+        </h5>
+        <h5 class="pt-4">Sesi terakhir login: {{ last_login }}</h5>
         <div class="grid-cols-3 grid gap-4 my-8">
             {% for product in products %}
             <div class="h-96 border-2 border-gray-200 rounded-lg p-6">

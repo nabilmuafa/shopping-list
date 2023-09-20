@@ -8,37 +8,38 @@
 
 <div class="login container flex flex-col items-center mx-auto">
 
-    <h1 class="text-4xl font-bold py-8">Login</h1>
-    <div class="bg-green-500 rounded-lg drop-shadow-xl px-16 py-8 mb-8 w-1/3">
+    <h1 class="text-4xl font-bold text-slate-700 py-8">Login</h1>
+    <div class="bg-white rounded-lg shadow-2xl px-8 pt-12 py-6 mb-8 w-1/3">
         <form method="POST" action="">
             {% csrf_token %}
             <table class="table-fixed w-full">
                 <tr>
-                    <td class="px-4 text-white">Username: </td>
+                    <td class="text-gray-700 font-medium">Username</td>
                 </tr>
                 <tr>
-                    <td class="py-2"><input type="text" name="username" placeholder="Username" class="form-control rounded-full p-2 border-2 w-full"></td>
+                    <td class="py-2"><input type="text" name="username" placeholder="Username" class="form-control py-3 px-4 border-2 w-full focus:shadow-lg"></td>
                 </tr>
                 <tr>
-                    <td class="px-4 pt-6 text-white">Password: </td>
+                    <td class="pt-6 text-gray-700 font-medium">Password</td>
                 </tr>
                 <tr>
-                    <td class="py-2"><input type="password" name="password" placeholder="Password" class="form-control rounded-full p-2 border-2 w-full"></td>
+                    <td class="py-2"><input type="password" name="password" placeholder="Password" class="form-control py-3 px-4 border-2 w-full focus:shadow-lg"></td>
                 </tr>            
                 <tr>
-                    <td class="pt-10 flex justify-end"><input class="btn login_btn bg-slate-100 hover:bg-gray-200 rounded-full px-4 py-2 cursor-pointer" type="submit" value="Login"></td>
+                    <td class="pt-10 pb-4 flex justify-center">
+                        <input class="btn login_btn bg-green-500 hover:bg-green-700 text-white font-medium rounded-full px-36 py-3 cursor-pointer" type="submit" value="Login">
+                    </td>
                 </tr>
+                {% if messages %}
+                <tr>
+                    {% for message in messages %}
+                    <td class="text-red-500 text-center pt-2">{{ message }}</td>
+                    {% endfor %}
+                </tr>
+                {% endif %} 
             </table>
         </form>
-    </div>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
+    </div>    
         
     <p class="text-center">Don't have an account yet?<br><a class="text-green-500 hover:text-green-700" href="{% url 'main:register' %}">Register Now</a></p>
 

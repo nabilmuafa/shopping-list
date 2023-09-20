@@ -1,16 +1,20 @@
 {% extends 'base.html' %}
 
+{% block header %}
+<header>
+    <div class="bg-white header mb-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <p class="text-3xl text-green-500 font-montserrat font-bold py-8">SHOPPING LIST PAGE</p>
+            <a href="{% url 'main:create_product' %}">
+                <button class="font-montserrat bg-green-500 hover:bg-green-700 font-medium text-white rounded-full px-4 py-2">Add New Product</button>
+            </a>
+        </div>
+    </div>
+</header>
+{% endblock header %}
+
 {% block content %}
     <div class="container mx-auto">
-        <div class="header mb-8">
-            <div class="flex justify-between items-center px-32">
-                <p class="text-3xl text-green-500 font-montserrat font-bold py-8">SHOPPING LIST PAGE</p>
-                <a href="{% url 'main:create_product' %}">
-                    <button class="font-montserrat bg-green-500 hover:bg-green-700 font-medium text-white rounded-full px-4 py-2">Add New Product</button>
-                </a>
-            </div>
-        </div>
-        
         <h5>
             {{name}} - {{class}}
             <span class="mx-4">
@@ -24,7 +28,7 @@
         <h5 class="pt-4">Sesi terakhir login: {{ last_login }}</h5>
         <div class="grid-cols-3 grid gap-4 my-8">
             {% for product in products %}
-            <div class="h-96 border-2 border-gray-200 rounded-lg p-6">
+            <div class="h-96 bg-white border-2 border-gray-200 rounded-lg p-6">
                 <p class="flex justify-between font-bold">{{product.name}}<span>Rp{{product.price}}</span></p>
                 <p class="pt-2">{{product.description}}</p>
             </div>

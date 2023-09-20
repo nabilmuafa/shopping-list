@@ -4,12 +4,17 @@
     <title>Register</title>
 {% endblock meta %}
 
+{% block header %}
+<header class="py-8">
+    <p class="text-5xl text-green-500 text-center font-montserrat font-bold">SHOPPING LIST</p>
+</header>
+{% endblock header %}
+
 {% block content %}  
 
 <div class = "login container flex flex-col items-center mx-auto">
-    
-    <h1 class="text-4xl font-bold text-slate-700 py-8">Register</h1>  
-    <div class="bg-white rounded-lg shadow-2xl px-8 pt-12 py-6 mb-8 max-w-xl">
+    <div class="bg-white rounded-lg shadow-2xl px-8 py-6 mb-8 max-w-xl">
+        <h1 class="text-3xl font-bold text-slate-700 pb-6">Register</h1>  
         <form method="POST" >  
             {% csrf_token %}  
             <table class="table-fixed w-full">  

@@ -1,19 +1,51 @@
 {% extends 'base.html' %} 
 
-{% block content %}
-<h1>Add New Product</h1>
+{% block header %}
+<h1 class="text-3xl font-bold pl-48">Add New Product</h1>
+{% endblock header %}
 
-<form method="POST">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Add Product"/>
-            </td>
-        </tr>
-    </table>
-</form>
+{% block content %}
+<div class="container mx-auto">
+    <form metdod="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <label for="id_name">Name:</label>
+                </td>
+            </tr>
+            <tr>
+                <td>  
+                    <input class="border-2" type="text" name="name" maxlengtd="255" required id="id_name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="id_price">Price:</label>
+                </td>
+            </tr>
+            <tr>
+                <td>  
+                    <input class="border-2" type="number" name="price" required id="id_price">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="id_description">Description:</label>
+                </td>
+            </tr>
+            <tr>
+                <td>  
+                    <textarea class="border-2" name="description" cols="40" rows="10" required id="id_description"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="bg-green-500 hover:bg-green-700 text-white font-medium px-4 py-2 rounded-full" type="submit" value="Add Product"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
 
 {% endblock %}

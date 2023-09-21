@@ -12,9 +12,11 @@ from django.contrib.auth.forms import UserCreationForm
 
 @login_required(login_url='login/')
 def show_main(request):
-    products = Product.objects.filter(user=request.user)
+    # products = Product.objects.filter(user=request.user)
+    products = Product.objects.all()
     context = {
-        'name': request.user.username,
+        # 'name': request.user.username,
+        'name': 'Muhammad Nabil Mu\'afa',
         'class': 'PBP C',
         'products': products,
         'last_login': request.COOKIES['last_login'],
@@ -59,9 +61,10 @@ def create_product(request):
     form = ProductForm(request.POST or None)
 
     if form.is_valid() and request.method == 'POST':
-        product = form.save(commit=False)
-        product.user = request.user
-        product.save()
+        # product = form.save(commit=False)
+        # product.user = request.user
+        # product.save()
+        form.save()
         return HttpResponseRedirect(reverse('main:show_main'))
     
     context = {'form': form}

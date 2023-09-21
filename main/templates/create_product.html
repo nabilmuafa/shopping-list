@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="container mx-auto">
-    <form metdod="POST">
+    <form method="POST">
         {% csrf_token %}
         <table>
             <tr>
@@ -41,7 +41,7 @@
             </tr>
             <tr>
                 <td>
-                    <input class="bg-green-500 hover:bg-green-700 text-white font-medium px-4 py-2 rounded-full" type="submit" value="Add Product"/>
+                    <input class="bg-green-500 hover:bg-green-700 text-white cursor-pointer font-medium px-4 py-2 rounded-full" type="submit" value="Add Product"/>
                 </td>
             </tr>
         </table>

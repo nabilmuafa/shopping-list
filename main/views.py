@@ -12,8 +12,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 @login_required(login_url='login/')
 def show_main(request):
-    # products = Product.objects.filter(user=request.user)
-    products = Product.objects.all()
+    products = Product.objects.filter(user=request.user)
     context = {
         'name': request.user.username,
         "class": "PBP C",

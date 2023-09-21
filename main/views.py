@@ -20,6 +20,7 @@ def show_main(request):
         'class': 'PBP C',
         'products': products,
         'last_login': request.COOKIES['last_login'],
+        'iduser': request.user.id
     }
 
     return render(request, 'main.html', context)

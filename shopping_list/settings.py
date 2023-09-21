@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure--e=81#!bqdtmt)!%f9)0fdtdc=!&2uti*d9=6h8l(vud)xo2=2
 
 # Automatically determine environment by detecting if DATABASE_URL variable.
 # DATABASE_URL is provided by Heroku if a database add-on is added (e.g. Heroku Postgres).
-PRODUCTION = env.bool('PRODUCTION', False)
+PRODUCTION = env.bool('PRODUCTION', True)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
